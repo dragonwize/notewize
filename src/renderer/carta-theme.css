@@ -1,0 +1,248 @@
+/* NoteWize dark theme for Carta MarkdownEditor */
+
+.carta-theme__notewize.carta-editor {
+  flex: 1;
+  min-height: 0;
+  width: 100%;
+  height: 100%;
+  display: flex;
+  flex-direction: column;
+  background: var(--bg-main);
+  color: var(--text-primary);
+  border: none;
+  border-radius: 0;
+}
+
+.carta-theme__notewize ::selection {
+  background: rgba(245, 124, 0, 0.28);
+}
+
+/* Full-height editor & preview containers */
+.carta-theme__notewize .carta-wrapper {
+  flex: 1;
+  min-height: 0;
+  display: flex;
+  flex-direction: column;
+  overflow: hidden;
+  padding: 0;
+}
+
+.carta-theme__notewize .carta-container {
+  flex: 1;
+  min-height: 0;
+  width: 100%;
+  display: flex;
+}
+
+.carta-theme__notewize .carta-input,
+.carta-theme__notewize .carta-renderer {
+  flex: 1;
+  width: 100%;
+  height: 100%;
+  min-height: 0;
+  overflow-y: auto;
+  padding: 24px 28px;
+}
+
+/* Markdown editor input & Shiki syntax highlighting */
+.carta-theme__notewize .carta-input {
+  caret-color: var(--text-primary);
+}
+
+.carta-theme__notewize .carta-font-code,
+.carta-theme__notewize .carta-input textarea,
+.carta-theme__notewize .carta-highlight,
+.carta-theme__notewize .carta-highlight .shiki {
+  font-family: var(--user-font, var(--font-mono));
+  font-size: var(--base-font-size, 15px);
+  line-height: 1.65;
+  tab-size: 2;
+}
+
+.carta-theme__notewize .carta-input textarea::placeholder {
+  color: var(--text-muted);
+}
+
+.carta-theme__notewize .carta-highlight > pre {
+  background: transparent;
+}
+
+.carta-theme__notewize .shiki,
+.carta-theme__notewize .shiki span {
+  color: var(--shiki-dark) !important;
+  background-color: transparent !important;
+  font-style: var(--shiki-dark-font-style, inherit) !important;
+  font-weight: var(--shiki-dark-font-weight, inherit) !important;
+  text-decoration: var(--shiki-dark-text-decoration, inherit) !important;
+}
+
+/* Rendered Markdown preview typography */
+.carta-theme__notewize .carta-renderer.markdown-body {
+  font-family: var(--user-font, var(--font-sans));
+  font-size: var(--base-font-size, 15px);
+  line-height: 1.7;
+  color: var(--text-primary);
+}
+
+/* Carta wraps the rendered HTML in a `display: contents` div, so the real
+   first/last blocks are children of that wrapper. */
+.carta-theme__notewize .markdown-body > div > *:first-child {
+  margin-top: 0;
+}
+
+.carta-theme__notewize .markdown-body > div > *:last-child {
+  margin-bottom: 0;
+}
+
+.carta-theme__notewize .markdown-body h1,
+.carta-theme__notewize .markdown-body h2,
+.carta-theme__notewize .markdown-body h3,
+.carta-theme__notewize .markdown-body h4,
+.carta-theme__notewize .markdown-body h5,
+.carta-theme__notewize .markdown-body h6 {
+  margin: 1.4em 0 0.6em;
+  font-weight: 600;
+  line-height: 1.3;
+  color: #f2f2f2;
+}
+
+.carta-theme__notewize .markdown-body h1 {
+  font-size: 1.85em;
+  padding-bottom: 0.3em;
+  border-bottom: 1px solid var(--border);
+}
+
+.carta-theme__notewize .markdown-body h2 {
+  font-size: 1.45em;
+  padding-bottom: 0.25em;
+  border-bottom: 1px solid var(--border);
+}
+
+.carta-theme__notewize .markdown-body h3 {
+  font-size: 1.2em;
+}
+
+.carta-theme__notewize .markdown-body h4 {
+  font-size: 1.05em;
+}
+
+.carta-theme__notewize .markdown-body p {
+  margin: 0 0 1em;
+}
+
+.carta-theme__notewize .markdown-body a {
+  color: var(--accent);
+  text-decoration: none;
+}
+
+.carta-theme__notewize .markdown-body a:hover {
+  color: var(--accent-hover);
+  text-decoration: underline;
+}
+
+.carta-theme__notewize .markdown-body ul,
+.carta-theme__notewize .markdown-body ol {
+  margin: 0 0 1em;
+  padding-left: 1.75em;
+}
+
+.carta-theme__notewize .markdown-body li {
+  margin: 0.25em 0;
+}
+
+.carta-theme__notewize .markdown-body li > input[type='checkbox'] {
+  margin-right: 0.5em;
+  accent-color: var(--accent);
+}
+
+.carta-theme__notewize .markdown-body blockquote {
+  margin: 0 0 1em;
+  padding: 0.4em 1em;
+  border-left: 3px solid var(--accent);
+  background: rgba(255, 255, 255, 0.03);
+  color: var(--text-secondary);
+}
+
+.carta-theme__notewize .markdown-body blockquote > :last-child {
+  margin-bottom: 0;
+}
+
+.carta-theme__notewize .markdown-body code {
+  font-family: var(--font-mono);
+  font-size: 0.88em;
+  padding: 0.15em 0.4em;
+  border-radius: 4px;
+  background: rgba(255, 255, 255, 0.07);
+}
+
+.carta-theme__notewize .markdown-body pre {
+  margin: 0 0 1em;
+  padding: 14px 16px;
+  overflow-x: auto;
+  border-radius: 6px;
+  background: #151515;
+  border: 1px solid var(--border);
+}
+
+.carta-theme__notewize .markdown-body pre code {
+  padding: 0;
+  background: transparent;
+  font-size: 0.9em;
+  line-height: 1.55;
+}
+
+.carta-theme__notewize .markdown-body hr {
+  border: none;
+  border-top: 1px solid var(--border);
+  margin: 1.5em 0;
+}
+
+.carta-theme__notewize .markdown-body table {
+  border-collapse: collapse;
+  width: 100%;
+  margin: 0 0 1em;
+}
+
+.carta-theme__notewize .markdown-body th,
+.carta-theme__notewize .markdown-body td {
+  padding: 8px 12px;
+  border: 1px solid var(--border);
+  text-align: left;
+}
+
+.carta-theme__notewize .markdown-body th {
+  background: var(--bg-sidebar-subheader);
+  font-weight: 600;
+}
+
+.carta-theme__notewize .markdown-body img {
+  max-width: 100%;
+  height: auto;
+  border-radius: 4px;
+}
+
+.carta-theme__notewize .markdown-body .mermaid-diagram {
+  margin: 0 0 1em;
+  padding: 16px;
+  border-radius: 6px;
+  background: #151515;
+  border: 1px solid var(--border);
+  overflow-x: auto;
+  display: flex;
+  justify-content: center;
+}
+
+.carta-theme__notewize .markdown-body .mermaid-diagram svg {
+  max-width: 100%;
+  height: auto;
+}
+
+.carta-theme__notewize .markdown-body .mermaid-diagram.mermaid-error {
+  justify-content: flex-start;
+  font-family: var(--font-mono);
+  font-size: 13px;
+  color: var(--danger);
+  background: rgba(239, 83, 80, 0.08);
+  border-color: rgba(239, 83, 80, 0.35);
+  white-space: pre-wrap;
+}
